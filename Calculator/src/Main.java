@@ -44,6 +44,7 @@ public class Main {
                         break;
                     case '%':
                         if (num2 != 0) {
+                            System.out.println("% is used for Modulus calculation.");
                             result = num1 % num2;
                             System.out.printf("Result: %.2f\n", result);
                         } else {
