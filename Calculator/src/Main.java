@@ -40,6 +40,21 @@ public class Main {
                         System.out.println("Error: Cannot divide by zero.");
                     }
                     break;
+                case '%':
+                    if (num2 != 0) {
+                        result = num1 % num2;
+                        System.out.printf("Result: %.2f\n", result);
+                    } else {
+                        System.out.println("Error: Cannot perform modulus by zero.");
+                    }
+                    break;
+                case '^':
+                    result = Math.pow(num1, num2);
+                    System.out.printf("Result: %.2f\n", result);
+                    break;
+                default:
+                    // No default calculation yet due to validation
+                    System.out.println("Error: Unknown operator.");
             }
 
             // Ask if user wants to continue
@@ -66,10 +81,10 @@ public class Main {
 
     // Method to get a valid operator
     public static char getValidOperator(Scanner scanner) {
-        System.out.print("Enter an operator (+, -, *, /): ");
+        System.out.print("Enter an operator (+, -, *, /, %, ^): ");
         String input = scanner.next().trim();
-        while (input.length() != 1 || "+-*/".indexOf(input.charAt(0)) == -1) {
-            System.out.print("Invalid operator. Please enter one of (+, -, *, /): ");
+        while (input.length() != 1 || "+-*/%^".indexOf(input.charAt(0)) == -1) {
+            System.out.print("Invalid operator. Please enter one of (+, -, *, /, %, ^): ");
             input = scanner.next().trim();
         }
         return input.charAt(0);
