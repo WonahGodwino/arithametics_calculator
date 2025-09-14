@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="arithametics_calculator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/arithametics_calculator_jar</output-path>
+    <root id="archive" name="arithametics_calculator.jar">
+      <element id="module-output" name="arithametics_calculator" />
+    </root>
+  </artifact>
+</component>
