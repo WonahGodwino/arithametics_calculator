@@ -93,7 +93,7 @@ public class Main {
                         System.out.printf("Result (cos(%.2f°)): %.4f\n", num, result);
                         break;
                     case "percent":
-                        num = getValidNumber(scanner, "Enter the percentage, e.g 2 if it's 2%: ");
+                        num = getValidNumber(scanner, "Enter the percentage, e.g 20 if it's 20%: ");
                         double percent = num; // first input is the percentage
                         double base = getValidNumber(scanner, "Enter the base value, the number you wish to find its % (e.g., 150 if 20% of 150): ");
                         result = (percent / 100) * base;

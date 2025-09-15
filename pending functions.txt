@@ -1,10 +1,20 @@
-Add support for square root, logarithm, or trigonometric functions?
+Add support for square root, logarithm, or trigonometric functions
 
-Turn this into a GUI application (Swing or JavaFX)?
+Turn this into a GUI application (Swing or JavaFX)
 
 Let it support scientific notation input or multiple chained operations
-Add natural log (ln), absolute value, or other math functions?
+Add natural log (ln), absolute value, or other math functions
 
-Display results in degrees vs radians toggle?
+Percentage Change (A → B)
+e.g., 50 → 75 = 50% increase
 
-Create a GUI version using JavaFX or Swing?
+What % is X of Y?
+e.g., 30 is 20% of 150
+
+Display results in degrees vs radians toggle
+
+Create a GUI version using JavaFX or Swing
+
+Convert to a GUI with buttons for these operations
+
+Add memory features like "Ans" and "M+"
