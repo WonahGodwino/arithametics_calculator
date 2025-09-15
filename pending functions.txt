@@ -1,0 +1,10 @@
+Add support for square root, logarithm, or trigonometric functions?
+
+Turn this into a GUI application (Swing or JavaFX)?
+
+Let it support scientific notation input or multiple chained operations
+Add natural log (ln), absolute value, or other math functions?
+
+Display results in degrees vs radians toggle?
+
+Create a GUI version using JavaFX or Swing?

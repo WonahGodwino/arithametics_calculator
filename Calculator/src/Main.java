@@ -9,8 +9,8 @@ public class Main {
 
         while (continueCalc) {
             System.out.println("\nChoose operation type:");
-            System.out.println("1. Basic (+, -, *, /, %, ^)");
-            System.out.println("2. Scientific (sqrt, log, sin, cos, tan)");
+            System.out.println("1. Basic (+, -, *, /, ^ , % (the % here is for Modulus))");
+            System.out.println("2. Scientific (sqrt, log, sin, cos, tan, percent)");
             System.out.print("Enter 1 or 2: ");
             int mode = getValidChoice(scanner);
 
@@ -59,12 +59,13 @@ public class Main {
 
             } else if (mode == 2) {
                 // Unary scientific function
+                double num;
                 String function = getValidFunction(scanner);
-                double num = getValidNumber(scanner, "Enter number: ");
                 double result;
 
                 switch (function.toLowerCase()) {
                     case "sqrt":
+                         num = getValidNumber(scanner, "Enter the number you wish to take the sqrt: ");
                         if (num >= 0) {
                             result = Math.sqrt(num);
                             System.out.printf("Result (√%.2f): %.2f\n", num, result);
@@ -73,6 +74,7 @@ public class Main {
                         }
                         break;
                     case "log":
+                        num = getValidNumber(scanner, "Enter the number you wish to take the log: ");
                         if (num > 0) {
                             result = Math.log10(num);
                             System.out.printf("Result (log10(%.2f)): %.2f\n", num, result);
@@ -81,14 +83,25 @@ public class Main {
                         }
                         break;
                     case "sin":
+                        num = getValidNumber(scanner, "Enter the number you wish to take the sine: ");
                         result = Math.sin(Math.toRadians(num));
                         System.out.printf("Result (sin(%.2f°)): %.4f\n", num, result);
                         break;
                     case "cos":
+                        num = getValidNumber(scanner, "Enter the number you wish to take the cosine: ");
                         result = Math.cos(Math.toRadians(num));
                         System.out.printf("Result (cos(%.2f°)): %.4f\n", num, result);
                         break;
+                    case "percent":
+                        num = getValidNumber(scanner, "Enter the percentage, e.g 2 if it's 2%: ");
+                        double percent = num; // first input is the percentage
+                        double base = getValidNumber(scanner, "Enter the base value, the number you wish to find its % (e.g., 150 if 20% of 150): ");
+                        result = (percent / 100) * base;
+                        System.out.printf("Result: %.2f%% of %.2f = %.2f\n", percent, base, result);
+                        break;
+
                     case "tan":
+                        num = getValidNumber(scanner, "Enter the number you wish to take the tangent: ");
                         double radians = Math.toRadians(num);
                         if (Math.cos(radians) == 0) {
                             System.out.println("Error: Tangent undefined at this angle.");
@@ -112,8 +125,7 @@ public class Main {
         scanner.close();
     }
 
-    // Helper methods
-
+    // methods
     public static double getValidNumber(Scanner scanner, String prompt) {
         System.out.print(prompt);
         while (!scanner.hasNextDouble()) {
@@ -151,10 +163,10 @@ public class Main {
     }
 
     public static String getValidFunction(Scanner scanner) {
-        System.out.print("Enter function (sqrt, log, sin, cos, tan): ");
+        System.out.print("Enter function (sqrt, log, sin, cos, tan, percent): ");
         String func = scanner.next().trim().toLowerCase();
-        while (!func.matches("sqrt|log|sin|cos|tan")) {
-            System.out.print("Invalid function. Choose from (sqrt, log, sin, cos, tan): ");
+        while (!func.matches("sqrt|log|sin|cos|tan|percent")) {
+            System.out.print("Invalid function. Choose from (sqrt, log, sin, cos, tan, percent): ");
             func = scanner.next().trim().toLowerCase();
         }
         return func;
